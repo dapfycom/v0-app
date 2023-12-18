@@ -108,7 +108,7 @@ export default function Component() {
   );
 }
 
-function LanguagesIcon(props) {
+function LanguagesIcon(props: any) {
   return (
     <svg
       {...props}

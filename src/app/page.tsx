@@ -1,9 +1,18 @@
 /**
  * v0 by Vercel.
- * @see https://v0.dev/t/8HVRMEAehPy
+ * @see https://v0.dev/t/TtLvfG4OYr6
  */
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 
 export default function Component() {
@@ -22,54 +31,83 @@ export default function Component() {
             }}
             width="40"
           />
-          <h1 className="text-2xl font-bold text-green-500 hover:underline">
-            Dapfy
-          </h1>
+          <h1 className="text-2xl font-bold text-green-500">Dapfy</h1>
         </div>
         <div className="space-x-4">
           <Link
             className="text-green-500 hover:text-green-600 hover:underline"
             href="#"
           >
-            Crypto Savings Account
+            Crypto On-Ramp
           </Link>
           <Link
             className="text-green-500 hover:text-green-600 hover:underline"
             href="#"
           >
-            Send Crypto
+            Crypto Off-Ramp
           </Link>
           <Link
             className="text-green-500 hover:text-green-600 hover:underline"
             href="#"
           >
-            Buy Crypto
+            Savings Account
           </Link>
           <Link
             className="text-green-500 hover:text-green-600 hover:underline"
             href="#"
           >
-            Sell Crypto
+            Sell Products
+          </Link>
+          <Link
+            className="text-green-500 hover:text-green-600 hover:underline"
+            href="#"
+          >
+            Subscriptions
           </Link>
         </div>
         <div className="flex items-center space-x-4">
           <div className="bg-green-500 hover:bg-green-600 text-white rounded-full p-2 cursor-pointer">
-            <LanguagesIcon className="w-4 h-4" />
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <div className="bg-green-500 hover:bg-green-600 text-white rounded-full p-1 cursor-pointer">
+                  <LanguagesIcon className="w-3 h-3" />
+                </div>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>Language Selection</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuRadioGroup defaultValue="English">
+                  <DropdownMenuRadioItem value="English">
+                    English
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="Romania">
+                    Romania
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="France">
+                    France
+                  </DropdownMenuRadioItem>
+                  <DropdownMenuRadioItem value="Spain">
+                    Spain
+                  </DropdownMenuRadioItem>
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
           <Button
             className="bg-green-500 hover:bg-green-600 text-white border-2 border-transparent hover:border-white rounded-full"
             variant="secondary"
+            asChild
           >
-            Login with Google
+            <Link href="/login">Sign Up with Google</Link>
           </Button>
         </div>
       </nav>
       <header className="flex flex-col items-center justify-center py-20 px-4 text-center">
-        <h2 className="text-6xl font-bold text-green-500 mb-4">
-          Your Savings Account That Keeps On Growing
+        <h2 className="text-5xl font-bold text-green-500 mb-4">
+          Secure, Non-Custodial Crypto Banking
         </h2>
         <p className="text-xl text-white mb-8">
-          Secure, Non-Custodial Crypto Banking
+          Buy, Save, Earn and Spend Your Crypto - All in One Place
         </p>
         <Button className="bg-green-500 hover:bg-green-600 text-white py-3 px-5 rounded text-lg">
           Start Earning Today

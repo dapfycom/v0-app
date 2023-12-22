@@ -2,6 +2,7 @@
  * v0 by Vercel.
  * @see https://v0.dev/t/TtLvfG4OYr6
  */
+import Login from "@/components/login/login";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
@@ -20,17 +21,6 @@ export default function Component() {
     <div key="1" className="bg-[#00008B] text-[#36454F] flex flex-col">
       <nav className="flex justify-between items-center p-5">
         <div className="flex items-center space-x-4">
-          <img
-            alt="Dapfy logo"
-            className="h-10"
-            height="40"
-            src="/placeholder.svg"
-            style={{
-              aspectRatio: "40/40",
-              objectFit: "cover",
-            }}
-            width="40"
-          />
           <h1 className="text-2xl font-bold text-green-500">Dapfy</h1>
         </div>
         <div className="space-x-4">
@@ -93,13 +83,8 @@ export default function Component() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <Button
-            className="bg-green-500 hover:bg-green-600 text-white border-2 border-transparent hover:border-white rounded-full"
-            variant="secondary"
-            asChild
-          >
-            <Link href="/login">Sign Up with Google</Link>
-          </Button>
+
+          <Login />
         </div>
       </nav>
       <header className="flex flex-col items-center justify-center py-20 px-4 text-center">
